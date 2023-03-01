@@ -9,25 +9,35 @@ body {
   color: #fff;
   font-size: 24px;
   font-weight: bold;
+  position: relative;
   padding: 10px;
   text-align: center;
   font-family: 'Helvetica Neue', sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 6px;
+  position: relative;
+  bottom: 10px;
+  
 }
 
 .header-container {
   margin: 0 auto;
   width: 80%;
+  
 }
-
-.sidebar {
-  background-color: #e6e6e6;
-  border: 1px solid #ccc;
+#shadow{
+    background-color: #8d9dcc;
+  border: 1px solid #8d9dcc;
+  box-shadow: 0 0 20px 15px #fff;
   border-radius: 5px;
-  margin: 20px;
+}
+.sidebar {
+
+
   padding: 15px;
-  width: 560px;
-  align-content: left;
+  margin: 12px;
+  width: 420px;
+  position: fixed;
+  left: 0px
 }
 
 .sidebar iframe {
@@ -138,7 +148,9 @@ body {
   padding-left: 20px;
   text-align: left;
 }
-
+strong{
+  color: #f23640;
+}
 .rule-list li {
   font-size: 24px;
   list-style: none;
@@ -186,7 +198,7 @@ img {
 		
 #contenido {
   display: none;
-  padding: 20px;
+  padding: 10px;
 }
 
 button {
@@ -206,7 +218,20 @@ button {
   position: relative;
   
 }
-
+.chat{
+  margin: 0 auto;
+  width: 450px;
+  top: 100px;
+  height: 100px;
+  position: absolute;
+  right: 40px;
+  z-index: 1;
+  padding-right: 45px;
+}
+.chat img{
+  width: 110%;
+  height: 100%
+}
 header{
   background-color: rgba(0,0,255,0.6);
   color: #fff;
