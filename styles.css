@@ -133,7 +133,6 @@ body {
 .img-header {
   background-color: rgba(255, 0, 0, 0.4);
   border-radius: 5px;
-  display: inline-block;
   font-size: 25px;
   font-weight: bold;
   line-height: 40px;
