@@ -1,0 +1,248 @@
+body {
+  background-color: #B1C5FF;
+  font-family: Arial, sans-serif;
+}
+
+
+.header {
+  background-color: #333;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: 6px;
+  position: relative;
+  bottom: 10px;
+  
+}
+
+.header-container {
+  margin: 0 auto;
+  width: 80%;
+  
+}
+#shadow{
+    background-color: #8d9dcc;
+  border: 1px solid #8d9dcc;
+  box-shadow: 0 0 20px 15px #fff;
+  border-radius: 5px;
+}
+.sidebar {
+
+
+  padding: 15px;
+  margin: 12px;
+  width: 420px;
+  position: fixed;
+  left: 0px
+}
+
+.sidebar iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+.rule {
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+.rule-header {
+  background-color: rgba(255, 0, 0, 0.4);
+  border-radius: 5px;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 80px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.container {
+  border: 5px solid #FF0000;
+  border-radius: 10px;
+  animation: blink 0.85s linear infinite;
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container1 {
+  width: 90%;
+  margin: 0 ;
+}
+
+.video {
+  float: left;
+  width: 30%;
+
+}
+.content {
+  float: right;
+  width: 70%;
+  margin: ;
+  
+  position: relative;
+  left: 60%;
+  transform: translateX(-100%);
+}
+
+
+@keyframes blink {
+  0% {
+     border-width: 10px;
+    border-color: #FF0000;
+  }
+  50% {
+     border-width: 5px;
+    border-color: transparent;
+  }
+  100% {
+     border-width: 10px;
+    border-color: #FF0000;
+  }
+ 
+}
+
+
+.container table {
+  border-collapse: collapse;
+  margin: 10px auto;
+}
+
+.container td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.container img {
+  height: auto;
+  width: 100px;
+}
+
+.img-header {
+  background-color: rgba(255, 0, 0, 0.4);
+  border-radius: 5px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.rule-list {
+  display: inline-block;
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+strong{
+  color: #f23640;
+}
+.rule-list li {
+  font-size: 24px;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.rule-list li:before {
+  content: "•";
+  margin-right: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+td {
+  padding: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+img {
+  height: auto;
+  width: 100px;
+}
+
+#mensaje {
+  background-image: url("https://static1-es.millenium.gg/articles/7/46/33/7/@/246010-aram-lol-article_cover_bd-1.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9999;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 24px;
+  font-weight: bold;
+}
+		
+#contenido {
+  display: none;
+  padding: 10px;
+}
+
+button {
+  background-color: rgba(0,0,255,0.6);
+  color: white;
+  padding:40px 180px;
+  border: none;
+  cursor: pointer;
+  border-radius: 115px;
+  font-size: 80px;
+}
+
+.yuumi img{
+  margin: 0 auto;
+  width: 500px;
+  height:700px;
+  position: relative;
+  
+}
+.chat{
+  margin: 0 auto;
+  width: 450px;
+  top: 100px;
+  height: 100px;
+  position: absolute;
+  right: 40px;
+  z-index: 1;
+  padding-right: 45px;
+}
+.chat img{
+  width: 110%;
+  height: 100%
+}
+header{
+  background-color: rgba(0,0,255,0.6);
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: 2px;
+  margin-top: -50px 
+}
+
+
+
+

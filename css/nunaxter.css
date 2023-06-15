@@ -1,0 +1,29 @@
+body {
+    background: linear-gradient(to bottom, #ffcccc, #ff99cc); /* Cambia los colores del degradado según tu preferencia */
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+}
+
+th {
+    background-color: #ff6699; /* Cambia el color del encabezado de la tabla según tu preferencia */
+    color: #fff;
+}
+
+td a {
+    color: #000; /* Cambia el color de los enlaces según tu preferencia */
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
