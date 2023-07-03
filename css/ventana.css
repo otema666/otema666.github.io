@@ -1,0 +1,70 @@
+/* Para crear las ventanas emergentes o modales primero gestionaré el input para mostral la ventana y luego la personalizaré*/
+
+/* Empiezo creando esta línea de código nombrando a todos los ID (uno por cada tienda), ya que si no, se verían unas "cajitas". Con "display:none" se ocultarán. */
+#btn-modal,#btn-modal2, #btn-modal3, #btn-modal4, #btn-modal5, #btn-modal6, #btn-modal7, #btn-modal8{
+	display: none;
+}
+
+/* Aquí defino la clase que define a las etiquetas (inputs) */
+.lbl-modal{
+	width: 100%;
+	background: #fff;
+	padding: 10px 15px;
+	border-radius: 4px;
+	cursor: pointer;	/* En esta línea hago que al tener el ratón encima se cambie su cursor para saber que se puede hacer click */
+	background-image:url(../imagenes/backgrounds/corcho.webp);
+}
+
+/* Aquí hago que al pulsar en la tienda se haga visible el modal (ventana emergente) */
+#btn-modal:checked ~ .modal, #btn-modal2:checked ~ .modal, #btn-modal3:checked ~ .modal, #btn-modal4:checked ~ .modal, #btn-modal5:checked ~ .modal, #btn-modal6:checked ~ .modal, #btn-modal7:checked ~ .modal, #btn-modal8:checked ~ .modal{
+	opacity: 1;
+	visibility: visible;
+} 
+
+/* Aquí defino las propiedades de la ventana emergente (toda la página) */
+.modal{
+	width: 100%;
+	height: 100vh;
+	display: block;
+	position: fixed;
+	background: rgba(0,0,0,0.7);	/* Fondo semi-transparente (opacidad de 0.7)*/
+	transition: all 500ms ease;		/* Transición para crear un efecto */
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* Aquí defino las propiedades del cuerpo de la ventana emergente (contenedor) */
+.contenedor{
+	width: 400px;
+	height: 300px;
+	margin: auto;
+	background: #fff;
+	box-shadow: 1px 7px 25px rgba(0,0,0,0.7);	/* Sombra para crear profundidad */
+	transition: all 500ms ease;		/*Transición para crear un efecto (se aplicará al cerrar esta ventana) */
+	position: relative;
+	margin-top: 230px;
+}
+
+/* Aquí creo la barra superior con su espaciado, color de fondo y letra y tamaño de letra */
+.contenedor header{
+	padding: 10px;
+	background: #5794f7;
+	color: #fff;
+	font-size: 18px
+}
+
+/* Aquí creo la X para cerrar la ventana, definiendo su posición */
+.contenedor label{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #fff;
+	font-size: 15px;
+	cursor: pointer; /* En esta línea hago que al tener el ratón encima se cambie su cursor para saber que se puede hacer click */
+}
+
+/* Esta clase se encarga de gestionar el texto que se ponga en la ventana. Le añado un relleno (espaciado) de 10px para dar margen al texto y defino el tamaño de letra */
+.contenido{
+	padding: 10px; 
+	font-size: 17px;
+}

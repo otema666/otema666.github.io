@@ -1,0 +1,51 @@
+/* AQUÍ VAN LOS BOTONES RETROCESO Y ACERCA DE */
+
+/* RETROCESO: */
+.retroceso{
+	position:relative;		
+	margin-left: 15px;
+	top: -51px;
+}
+
+/* Aquí cambio el color de fondo al mantener el ratón encima */
+.retroceso a:hover{
+  background-color:#3e6bb3;
+}
+
+/* Aquí personalizo las propiedades del botón */
+.retroceso a{
+  border-style: dashed; /* Estas son las líneas que rodean al botón */
+	border-width: 2px;
+	border-color: #2d4d80;
+	box-shadow: 1px 7px 25px rgba(0,0,0,0.5); /* Aquí añado una pequeña sombra a la caja */
+	width: 145px;
+	margin-left: 12px;
+	background-color:#5794f7; 
+	color:#000000;
+	text-decoration:none;
+	padding: 10px 5px;	
+}
+
+/* ACERCA DE (RESUMEN): */
+/* A esté botón le doy las mismas propiedades que el anterior, excepto su posicion */
+
+.resumen{
+  position: relative;
+	margin-left: 160px;
+	top: -88px;
+}
+
+.resumen a:hover{
+  background-color:#3e6bb3;
+}
+
+.resumen a{
+  border-style: dashed;
+	border-width: 2px;
+	border-color: #2d4d80;
+	box-shadow: 1px 7px 25px rgba(0,0,0,0.5);
+	background-color:#5794f7; 
+	color:#000000;
+	text-decoration:none;
+	padding: 7px;	
+}

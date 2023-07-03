@@ -1,0 +1,49 @@
+/* Con * ("selector universal") asigno estos valores que afectan a todos los elementos. */
+*{
+	margin:0px;
+	padding:0px;
+}
+
+/* Posicion del menú */
+.categ{
+	position:relative;		
+	margin-left: 15px;
+	top: -64px;
+	height: 42px;
+}
+
+
+/* Elementos del menú */
+ul {				
+	
+	list-style:none;	/* Con esto se quitan las decoraciones de texto que se crean en las listas */ 
+	width: 120px;
+	height: 123px;
+}
+
+/* Texto de los elementos del menú */
+.nav li a{
+	box-shadow: 1px 7px 25px rgba(0,0,0,0.7);	/* Añado una pequeña sombra */
+	background-color:#5794f7; 
+	color:#000000;
+	text-decoration:none;	/* Con esto se quita el subrayado que se crea por defecto en el elemento "<a> </a>" */ 
+	padding:12px 12px;
+	display:block;
+}
+
+/* Texto de los elementos del menú al mantener el ratón encima */	
+.nav li a:hover {
+	background-color:#3e6bb3;   /* Cambio de color del fondo para dar una sensación de selección */
+}
+
+/* Con esto se ocultan las categorias (para que solo esten visibles cuando pasemos el mause por encima) */
+.nav li ul {
+	display:none;	
+	position:absolute;
+}
+
+/*Aquí mantenemos las categorías abiertas mientras tengamos el mouse encima */
+.nav li:hover > ul {
+	display:block;
+	position: absolute;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<!-- Empiezo poniendo un título a la página e importando las 7 hojas de estilo (.css) en "<head>" -->
+  <head>
+    <meta charset="UTF-8">
+    <title>Página principal</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">		<!-- Importamos bootstrap -->
+    <link rel="shortcut icon" href="../imagenes/iconos/icono_tienda.png">	<!-- Añadimos icono a la pestana -->
+    
+	<!-- Importamos nuestras hojas de estilo (archivos .css) -->
+	<link rel="StyleSheet" href="../css/fondo.css" type="text/css">
+	<link rel="StyleSheet" href="../css/menu.css" type="text/css">
+	<link rel="StyleSheet" href="../css/imagenes.css" type="text/css">
+	<link rel="stylesheet" href="../css/ventana.css">
+	<link rel="stylesheet" href="../css/animacion.css">
+	<link rel="stylesheet" href="../css/botones.css">
+  </head>
+  
+  <body>
+	<!-- Creo el título superior en el elemento "<p>" con su estilo. Tambien le asigno un id para más tarde crear una animación en css -->
+  	<p style="color:#000000;background-color:#5794f7;font-family:georgia;text-align:center" id= "animacion"> Tiendas para ir de compras en La Coruña <p>
+	<!-- Creo el menú desplegable, que básicamente es una lista a la que le añado dos clases -->
+	<div class="categ">
+		<ul class="nav">
+			<li><a style="font-family:verdana"><strong>Categorías</strong></a>
+				<ul>
+					<li><a href="categorias/categoria_moda.html">Moda</a></li>
+					<li><a href="categorias/categoria_deporte.html">Deporte</a></li>
+					<li><a href="categorias/categoria_electronica.html">Electrónica</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- Aquí creo un botón asignandole la clase "resumen" el cual nos llevará otra página -->
+	<div class="resumen">
+		<a href="../html/categorias/resumen.html" style="font-family:verdana"><strong>Acerca de</strong></a></li>
+	</div>
+	
+	
+	<h3><strong>Mejores tiendas y centros actuales según valoraciones de los usuarios:</strong></h3> 
+	
+	<!-- Creo la primera fila de imagenes con la clase "fila" -->
+	<div class="fila">
+		<!-- Dentro de la fila crearemos 4 imagenes y para ello las metemos dentro de la clase comlumna -->
+        <div class="columna">
+			<h5 align="center">1. Marineda City</h5>	<!-- Damos un título centrado a la imagen -->
+			
+			<!-- Creamos un input tipo "checkbox" asignandole un ID y después una etiqueta con el elemento <label> (en la clase "lbl-modal"), para que la imagen sea clikeable. -->
+			<input type="checkbox" id="btn-modal2">
+			<label for="btn-modal2" class="lbl-modal"><img src="../imagenes/cc_marineda.jpg"></label>
+			<!-- Creamos la clase modal (nuestra ventana emergente) -->
+			<div class="modal">
+				<!-- Dentro tendremos la clase que agrupa todo el contenedor de la ventana -->
+				<div class="contenedor">
+					<!-- Con nuestra header ponemos(parte superior de la ventana) ponemos un título y creamos una etiqueta, para poder cerrar la ventana haciendo click en "X". -->
+					<header>Marineda City</header>
+					<label for="btn-modal2">X</label>
+					<!-- En la clase contenido ponemos tres párrafos con la información de la tienda. -->
+					<div class="contenido">
+						<p>Página web: <a href="https://marinedacity.com/ES"target=”_blank”>https://marinedacity.com/ES </a> </p> <br>
+						<p>Maps: <a href="https://www.google.es/maps/place/Marineda+City/@43.3454153,-8.431482,17z/data=!3m1!4b1!4m5!3m4!1s0xd2e7cec2e25a443:0x63e9746f582d47a4!8m2!3d43.3454114!4d-8.4292933?hl=es" target=”_blank”>https://www.google.es/maps/</a> </p> <br>
+						<p>Teléfono: 881 888 888</p> <br>
+					</div>
+				</div>
+			</div>
+        </div>
+		
+        <div class="columna">
+            <h5 align="center">2. Coruña The Style Outlets</h5>
+			<input type="checkbox" id="btn-modal3">
+			<label for="btn-modal3" class="lbl-modal"><img src="../imagenes/outlets.jpg"></label>
+			<div class="modal">
+				<div class="contenedor">
+					<header>Coruna The Style Outlets</header>
+					<label for="btn-modal3">X</label>
+					<div class="contenido">
+						<p>Página web: <a href="https://coruna.thestyleoutlets.es/es"target=”_blank”>https://coruna.thestyleoutlets.es/es </a> </p> <br>
+						<p>Maps: <a href="https://www.google.es/maps/place/Coru%C3%B1a+The+Style+Outlets/@43.3000272,-8.3857363,14.83z/data=!4m5!3m4!1s0xd2e645f36420c41:0xe717bd72f34ffe7d!8m2!3d43.2906258!4d-8.370741?hl=es" target=”_blank”>https://www.google.es/maps/</a> </p> <br>
+						<p>Teléfono: 981 652 800</p> <br>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="columna">
+			<h5 align="center">3. CC Cuatro Caminos</h5>
+			<input type="checkbox" id="btn-modal4">
+			<label for="btn-modal4" class="lbl-modal"><img src="../imagenes/cc_cuatro_caminos.jpg"></label>
+			<div class="modal">
+				<div class="contenedor">
+					<header>Centro comercial de Cuatro Caminos</header>
+					<label for="btn-modal4">X</label>
+					<div class="contenido">
+						<p>Página web: <a href="https://4caminos.com/"target=”_blank”>https://4caminos.com/ </a> </p> <br>
+						<p>Maps: <a href="https://www.google.es/maps/place/C.C.+Cuatro+Caminos/@43.3545917,-8.4043059,17z/data=!3m2!4b1!5s0xd2e7c9b882b83d1:0x7edf0a3af14fdfec!4m5!3m4!1s0xd2e7c9b9d6ef065:0x34067cc1d0dbbb9e!8m2!3d43.3545878!4d-8.4021172?hl=es" target=”_blank”>https://www.google.es/maps/</a> </p> <br>
+						<p>Teléfono: 981 240 411</p> <br>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="columna">
+            <h5 align="center">4. Decathlon</h5>
+			<input type="checkbox" id="btn-modal">
+			<label for="btn-modal" class="lbl-modal"><img src="../imagenes/decathlon.jpg"></label>
+			<div class="modal">
+				<div class="contenedor">
+					<header>Decathlon</header>
+					<label for="btn-modal">X</label>
+					<div class="contenido">
+						<p>Página web: <a href="https://www.decathlon.es/es/"target=”_blank”>https://www.decathlon.es/es/ </a> </p> <br>
+						<p>Maps: <a href="https://www.google.es/maps/place/Decathlon+A+Coru%C3%B1a/@43.3434998,-8.4313479,17z/data=!3m1!4b1!4m5!3m4!1s0xd2e7ce9c5996ef7:0xc6e053137876cbf3!8m2!3d43.3434959!4d-8.4291592?hl=es"target=”_blank”>https://www.google.es/maps/</a> </p> <br>
+						<p>Teléfono: 981 632 210</p> <br>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+    <!-- Creo la segunda fila de imagenes y repito el proceso -->
+	<div class="fila">
+        <div class="columna">
+			<h5 align="center">5. Arenal</h5>
+			<input type="checkbox" id="btn-modal5">
+			<label for="btn-modal5" class="lbl-modal"><img src="../imagenes/arenal.jpg"></label>
+			<div class="modal">
+				<div class="contenedor">
+					<header>Arenal</header>
+					<label for="btn-modal5">X</label>
+					<div class="contenido">
+						<p>Página web: <a href="https://www.arenal.com/"target=”_blank”>https://www.arenal.com/ </a> </p> <br>
+						<p>Maps: <a href="https://www.google.es/maps/place/Arenal/@43.3676313,-8.412491,17z/data=!4m9!1m2!2m1!1sArenal!3m5!1s0xd2e7c62bc3b2475:0x1fd4a99281ed4915!8m2!3d43.3676815!4d-8.4085835!15sCgZBcmVuYWwiA4gBAVoIIgZhcmVuYWySAQ1wZXJmdW1lX3N0b3JlmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVVJKYUMxZlNHOUJSUkFC4AEA?hl=es" target=”_blank”>https://www.google.es/maps/</a> </p> <br>
+						<p>Teléfono: 981 160 122</p> <br>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="columna">
+			<h5 align="center">6. Media Markt</h5>
+			<input type="checkbox" id="btn-modal6">
+			<label for="btn-modal6" class="lbl-modal"><img src="../imagenes/media_markt.jpeg"></label>
+			<div class="modal">
+				<div class="contenedor">
+					<header>Media Markt</header>
+					<label for="btn-modal6">X</label>
+					<div class="contenido">
+						<p>Página web: <a href="https://www.decathlon.es/es/"target=”_blank”>https://www.decathlon.es/es/ </a> </p> <br>
+						<p>Maps: <a href="" target=”_blank”>https://www.google.es/maps/</a> </p> <br>
+						<p>Teléfono: 981 632 210</p> <br>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="columna">
+            <h5 align="center">7. Pull&amp Bear</h5>
+			<input type="checkbox" id="btn-modal7">
+			<label for="btn-modal7" class="lbl-modal"><img src="../imagenes/pull_and_bear.jpg"></label>
+			<div class="modal">
+				<div class="contenedor">
+					<header>Pull&amp Bear</header>
+					<label for="btn-modal7">X</label>
+					<div class="contenido">
+						<p>Página web: <a href="https://www.decathlon.es/es/"target=”_blank”>https://www.decathlon.es/es/ </a> </p> <br>
+						<p>Maps: <a href="" target=”_blank”>https://www.google.es/maps/</a> </p> <br>
+						<p>Teléfono: 981 632 210</p> <br>
+					</div>
+				</div>
+			</div>
+        </div>
+		<div class="columna">
+            <h5 align="center">8. Fnac</h5>
+			<input type="checkbox" id="btn-modal8">
+			<label for="btn-modal8" class="lbl-modal"><img src="../imagenes/arenal.jpg"></label>
+			<div class="modal">
+				<div class="contenedor">
+					<header>Fnac</header>
+					<label for="btn-modal8">X</label>
+					<div class="contenido">
+						<p>Página web: <a href="https://www.decathlon.es/es/"target=”_blank”>https://www.decathlon.es/es/ </a> </p> <br>
+						<p>Maps: <a href="" target=”_blank”>https://www.google.es/maps/</a> </p> <br>
+						<p>Teléfono: 981 632 210</p> <br>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+  </body>
+</html>

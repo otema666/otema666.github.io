@@ -1,0 +1,38 @@
+/*Importamos la imagen de fondo y la aplicamos con un tamaño del 50% (La imagen se repite automaticamente para rellenar toda la pantalla)*/
+body{
+  background-image:url(../imagenes/backgrounds/fondo.jpg);
+  background-size: 50%;
+}
+
+/*Definimos el elemento recuadro*/
+#recuadro{
+ font-family: sans-serif;
+ font-size: 18px; 
+ width: 1000px;
+ margin: auto;
+ text-align: justify; 
+ background: #77a6f2; 
+ padding: 18px; 
+ border-radius: 35px 0px 35px 0px; 
+ border: 2px solid #5878ca;
+}
+
+/* Aquí meteré también algunos ajustes para los elementos h */
+h6, h5{
+  background-color: rgba(87,148,247,.9);
+  border-radius: 12px;
+  font-size: 19px;
+}
+h6{
+   font-size: 16px;
+}
+
+h3{
+  color:#243d66;
+  text-align: center;
+  font-family: georgia;
+  font-size: 32px;
+	margin-left: auto; 
+}
+
+

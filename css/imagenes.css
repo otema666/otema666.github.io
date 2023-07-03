@@ -1,0 +1,38 @@
+/* Personalizo las propiedades de las tiendas: tamaño y recuadro azul. */
+.columna {
+  border-radius: 12px;
+  float: left;
+  width: 19%;
+  border-style: double;
+  border-color: rgba(54, 92, 153,1);
+  margin: 15px;
+}
+
+/* Defino lo que pasará al mantener el mouse encima de cada tienda: recuadro rojo y mayor tamaño */
+.columna:hover {
+  position: relative;
+  border-radius: 12px;
+  transition: all 200ms ease;
+  background-color:rgba(87, 148, 247,0.5);
+  border-style: solid;
+  border-color: rgba(255, 0, 0,0.5);
+  width: 19.5%;
+}
+ 
+/* Añado margen izq a las filas para centrarlas */
+.fila{
+  margin-left: 230px
+}
+
+/* Ahora añado estos valores para que la tabla de imagenes no se descuadre */
+.fila::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Aquí hago que todas las imágenes tengan el mismo tamaño y recorto sus esquinas */
+img {
+  width: 100%;
+  border-radius: 35%;
+}
