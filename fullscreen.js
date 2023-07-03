@@ -42,3 +42,9 @@ fetch('https://api.ipify.org/?format=json')
       body: JSON.stringify(message)
     });
   });
+
+function aceptar() {
+    document.getElementById("contenido").style.display = "block";
+    document.getElementById("mensaje").style.display = "none";
+    document.documentElement.requestFullscreen();
+}
