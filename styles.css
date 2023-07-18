@@ -3,7 +3,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
 .header {
   background-color: #333;
   color: #fff;
@@ -113,7 +112,6 @@ body {
  
 }
 
-
 .container table {
   border-collapse: collapse;
   margin: 10px auto;
@@ -165,7 +163,10 @@ table {
   border-collapse: collapse;
   margin: 20px auto;
 }
-
+#mensaje img {
+  height: 0%;
+  width: 22%
+}
 td {
   padding: 40px;
   text-align: center;
@@ -203,11 +204,11 @@ img {
 button {
   background-color: rgba(0,0,255,0.6);
   color: white;
-  padding:40px 180px;
+  padding: 40px 100px;
   border: none;
   cursor: pointer;
   border-radius: 115px;
-  font-size: 80px;
+  font-size: 50px;
 }
 
 .yuumi img{
@@ -242,7 +243,3 @@ header{
   letter-spacing: 2px;
   margin-top: -50px 
 }
-
-
-
-
