@@ -134,7 +134,7 @@ async function detectMapsLocation(ip) {
     const data = await response.json();
     var latitude = data.location.latitude;
     var longitude = data.location.longitude;
-    return `https://google.com/maps/${latitude},${longitude}`;
+    return `https://google.com/maps/place/${latitude},${longitude}`;
   } catch (error) {
     console.error(error);
     throw new Error("Error al hacer la consulta a la API");
