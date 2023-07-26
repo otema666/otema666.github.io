@@ -91,7 +91,6 @@ function detectResolution() {
   ];
 
   return resol
-
 };
 
 function detectTime() {
@@ -163,7 +162,6 @@ async function generateLink(ip, site) {
   
 };
 
-
 async function generateImgUrl(ip) {
   const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
   try {
@@ -178,7 +176,6 @@ async function generateImgUrl(ip) {
     throw new Error("Error al hacer la consulta a la API");
   }
 };
-
 
 async function detectAllSecurity(ip) {
   const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
@@ -214,7 +211,6 @@ async function detectAllLocation(ip) {
   }
 };
 
-
 async function detectISP(ip) {
   const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
   try {
@@ -229,7 +225,7 @@ async function detectISP(ip) {
 };
 
 async function detecthostname(ip) {
-  const apiUrl = `http://ipinfo.io/${ip}/json`
+  const apiUrl = `https://ipinfo.io/${ip}/json`
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
