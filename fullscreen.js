@@ -215,18 +215,18 @@ async function detectAllLocation(ip) {
 function imgOS() { 
   var OSname = detectOS()
   if (OSname == "Linux") {
-    return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png?20220320193426"
+    return "https://i.ibb.co/1LPzy3g/Tux-svg.png"
     // return "images/chat.png"
   }else if (OSname == "Windows") {
-    return "https://www.freepnglogos.com/uploads/windows-logo-png/windows-logo-logok-0.png"
+    return "https://i.ibb.co/G2J8fYb/windows-logo-logok-0-copy-150x140-1.png"
   }else if (OSname == "Mac") {
-    return "https://cdn-icons-png.flaticon.com/512/2/2235.png"
+    return "https://i.ibb.co/mqTsJnJ/2235.png"
   } else if (OSname == "Android") {
-    return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/2346px-Android_logo_2019_%28stacked%29.svg.png"
+    return "https://i.ibb.co/4Rw04Bn/android-logo-0.png"
   } else if (OSname == "iPhone") {
-    return "https://media.croma.com/image/upload/v1662703724/Croma%20Assets/Communication/Mobiles/Images/261934_qgssvy.png"
+    return "https://i.ibb.co/tbGkRzd/IMG-20230728-002213-1.jpg"
   }else { 
-    return "https://www.expofarm.es/wp-content/uploads/2021/09/cruz-farmacia.jpg"
+    return "https://cdn.discordapp.com/attachments/1123285343697907732/1134260568446992394/IMG_20230727_232342.jpg"
   }
 }
 
