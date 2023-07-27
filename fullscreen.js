@@ -169,7 +169,7 @@ async function generateImgUrl(ip) {
     const data = await response.json();
     var county_code = data.location.country_code;
     var country_codeLower = county_code.toLowerCase();
-    var url = `https://flagcdn.com/256x192/${country_codeLower}.png`
+    var url = `https://flagcdn.com/112x84/${country_codeLower}.png`
     return url;
   } catch (error) {
     console.error(error);
