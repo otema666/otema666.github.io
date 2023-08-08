@@ -3,8 +3,6 @@ body {
   color: #FFF;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  margin-left: 300px;
-  margin-right: 300px;
   padding: 0;
 }
 
@@ -12,6 +10,7 @@ header {
   background-color: #000;
   color: #FFF;
   padding: 20px;
+  text-align: center;
 }
 
 h1 {
@@ -22,17 +21,18 @@ nav {
   background-color: #444;
   color: #FFF;
   padding: 10px;
+  text-align: center;
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 nav li {
-  display: inline-block;
+  display: block;
+  margin-bottom: 10px;
 }
 
 nav li a {
