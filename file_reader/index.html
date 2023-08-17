@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text processor</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="assets/file.ico">
+  </head>
+  <body>
+    <h1>Procesar archivo de texto</h1>
+    <div id="caja1">
+      <div class="contenedor">
+        <div class="multicolor" id="file-selector-container">
+          <div id="file-selector" onclick="document.getElementById('txt-file').click();">
+            &nbsp;&nbsp; Seleccionar archivo &nbsp;&nbsp;
+            <input type="file" id="txt-file" accept=".txt,.js,.md" onchange="updateSelectedFile()">
+          </div>
+          <div id="selected-file"></div>
+        </div>
+      </div>
+      <div id="process-btn-container">
+        <div id="loader-container" class="hidden">
+          <div id="loader"></div>
+        </div>
+        <button type="button" id="process-btn" class="disabled" onclick="processFile()">Procesar archivo</button>
+      </div>
+    </div>
+
+    <div id="result-container" class="hidden">
+      <button type="button" id="reset_button" class="hidden" onclick="reset()">🔙 Volver atrás</button>
+      <h2 id="result-container-header">Resultados:</h2>
+      <pre><code id="result" style="text-align: left;">Esperando a procesar archivo...</code></pre>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
